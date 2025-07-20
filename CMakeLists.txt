@@ -23,7 +23,7 @@ target_include_directories(uMediator
         $<INSTALL_INTERFACE:include>
 )
 
-target_link_libraries(uMediator INTERFACE Boost::di)
+target_link_libraries(uMediator INTERFACE di)
 
 include(GNUInstallDirs)
 
