@@ -14,6 +14,7 @@ FetchContent_Declare(
 )
 
 FetchContent_MakeAvailable(boost-di)
+FetchContent_GetProperties(boost-di)
 
 add_library(uMediator INTERFACE)
 
@@ -21,9 +22,8 @@ target_include_directories(uMediator
         INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>
+        $<BUILD_INTERFACE:${boost-di_SOURCE_DIR}/include>
 )
-
-target_link_libraries(uMediator INTERFACE Boost::di)
 
 include(GNUInstallDirs)
 
