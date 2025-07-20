@@ -13,9 +13,8 @@ FetchContent_Declare(
         GIT_TAG        v1.3.2
 )
 
-set(BOOST_DI_HEADER_ONLY ON CACHE BOOL "Force boost-di to be header-only")
-
 FetchContent_MakeAvailable(boost-di)
+FetchContent_GetProperties(boost-di)
 
 add_library(uMediator INTERFACE)
 
@@ -23,9 +22,8 @@ target_include_directories(uMediator
         INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>
+        "${boost-di_SOURCE_DIR}/include"
 )
-
-target_link_libraries(uMediator INTERFACE di)
 
 include(GNUInstallDirs)
 
