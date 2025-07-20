@@ -13,6 +13,8 @@ FetchContent_Declare(
         GIT_TAG        v1.3.2
 )
 
+set(BOOST_DI_HEADER_ONLY ON CACHE BOOL "Force boost-di to be header-only")
+
 FetchContent_MakeAvailable(boost-di)
 
 add_library(uMediator INTERFACE)
