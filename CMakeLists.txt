@@ -22,7 +22,7 @@ target_include_directories(uMediator
         INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>
-        "${boost-di_SOURCE_DIR}/include"
+        $<BUILD_INTERFACE:${boost-di_SOURCE_DIR}/include>
 )
 
 include(GNUInstallDirs)
